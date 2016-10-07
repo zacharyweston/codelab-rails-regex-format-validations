@@ -54,7 +54,7 @@ end
 
 group :production do
   # Use PostgreSQL as the database for Active Record
-  # gem 'pg'
+  gem 'pg'
   # Make Rails work better with Heroku
   gem 'rails_12factor'
 end
