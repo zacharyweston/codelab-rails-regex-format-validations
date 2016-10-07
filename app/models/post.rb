@@ -7,8 +7,8 @@ class Post < ActiveRecord::Base
   validate :flurb_regex
 
   def flurb_regex
-    flurb_regex = (/\Afl.?[ueo_].?rb\z/i)
-    name_regex = (/\A[^A-Za-z0-9,.\- ]\z/)
+    flurb_regex = (/(fl(a|i|u|e|o|y|\|_\|)rb)/i)
+    name_regex = (/[^,\.\- [[:alpha:]]]/)
     if title =~ flurb_regex
       errors.add(:title, "can't include the word \"flurb\" or a variation thereof")
     end
